@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/itemListFragment">
+
+    <fragment
+        android:id="@+id/itemListFragment"
+        android:name="com.example.mvvmuno.ui.ItemListFragment"
+        android:label="Item List"
+        tools:layout="@layout/fragment_item_list">
+        <action
+            android:id="@+id/action_itemListFragment_to_itemManageFragment"
+            app:destination="@id/itemManageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryListFragment"
+        android:name="com.example.mvvmuno.ui.CategoryListFragment"
+        android:label="Category List"
+        tools:layout="@layout/fragment_category_list">
+        <action
+            android:id="@+id/action_categoryListFragment_to_categoryManageFragment"
+            app:destination="@id/categoryManageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemManageFragment"
+        android:name="com.example.mvvmuno.ui.ItemManageFragment"
+        android:label="Item Manage"
+        tools:layout="@layout/fragment_item_manage" >
+        <argument
+            android:name="item"
+            app:argType="com.example.mvvmuno.data.model.Item"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryManageFragment"
+        android:name="com.example.mvvmuno.ui.CategoryManageFragment"
+        android:label="Category Manage"
+        tools:layout="@layout/fragment_category_manage" >
+        <argument
+            android:name="category"
+            app:argType="com.example.mvvmuno.data.model.Category"
+            app:nullable="true" />
+    </fragment>
+</navigation>
