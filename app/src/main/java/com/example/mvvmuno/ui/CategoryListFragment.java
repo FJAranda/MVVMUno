@@ -67,11 +67,14 @@ public class CategoryListFragment extends Fragment implements CategoryAdapter.On
 
     @Override
     public void onEditCategory(Category category) {
-
+        CategoryListFragmentDirections.ActionCategoryListFragmentToCategoryManageFragment action =
+                CategoryListFragmentDirections.actionCategoryListFragmentToCategoryManageFragment(category);
+        NavHostFragment.findNavController(this).navigate(action);
     }
 
     @Override
     public void onDeleteCategory(Category category) {
-
+        viewModel.delete(category);
+        //adapter.notifyDataSetChanged();
     }
 }

@@ -1,6 +1,9 @@
 package com.example.mvvmuno.data.model;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
+import androidx.databinding.library.baseAdapters.BR;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
@@ -8,7 +11,7 @@ import androidx.room.PrimaryKey;
 import java.io.Serializable;
 
 @Entity
-public class Category implements Serializable {
+public class Category implements Serializable  {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
@@ -30,7 +33,7 @@ public class Category implements Serializable {
     }
 
     public void setName(@NonNull String name) {
-        this.name = name;
+            this.name = name;
     }
 
     public Category(int id, @NonNull String name) {

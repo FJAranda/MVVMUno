@@ -20,5 +20,9 @@ public class CategoryListViewModel extends ViewModel {
         return list;
     }
 
+    public void delete(Category category){
+        CategoryRepository.getInstance().delete(category);
+    }
+
 
 }
